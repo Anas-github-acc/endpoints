@@ -1,4 +1,4 @@
-# School Management API (Node.js + Express + MySQL)
+# Endpoints
 
 We are providing these endpoints:
 - `POST /addSchool` to add a school.
@@ -86,18 +86,7 @@ This repository includes `render.yaml` for quick deployment.
 
 1. Push the code to GitHub.
 2. In Render, create a new Blueprint and select this repository.
-3. Set environment variables in Render:
-
-   - `NODE_ENV=production`
-   - `PORT=3000`
-   - `DB_HOST=<tidb-host>`
-   - `DB_PORT=4000`
-   - `DB_USER=<tidb-username>`
-   - `DB_PASSWORD=<tidb-password>`
-   - `DB_NAME=school_management`
-   - `DB_SSL=true`
-   - `DB_SSL_REJECT_UNAUTHORIZED=true`
-
+3. Use the .env file to feed the env variables in Render config
 4. In TiDB Cloud, allow Render network access for your service.
 5. Deploy and verify health endpoint: `/health`.
 6. Use deployed base URL in Postman collection variable `baseUrl`.

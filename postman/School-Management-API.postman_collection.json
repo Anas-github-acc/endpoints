@@ -63,7 +63,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "http://localhost:3000"
+      "value": "https://endpoints-g6ow.onrender.com"
     }
   ]
 }
