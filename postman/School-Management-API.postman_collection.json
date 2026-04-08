@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "School Management API",
+    "description": "Collection for testing addSchool and listSchools APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Green Valley High School\",\n  \"address\": \"21 Main Street, Bangalore\",\n  \"latitude\": 12.9716,\n  \"longitude\": 77.5946\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/addSchool",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "addSchool"
+          ]
+        },
+        "description": "Adds a new school.\n\nExpected success response (201):\n{\n  \"success\": true,\n  \"message\": \"School added successfully\",\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"Green Valley High School\",\n    \"address\": \"21 Main Street, Bangalore\",\n    \"latitude\": 12.9716,\n    \"longitude\": 77.5946\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "List Schools by Distance",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/listSchools?latitude=12.9611&longitude=77.6387",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "listSchools"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "12.9611"
+            },
+            {
+              "key": "longitude",
+              "value": "77.6387"
+            }
+          ]
+        },
+        "description": "Returns all schools sorted by nearest distance from provided coordinates.\n\nExpected success response (200):\n{\n  \"success\": true,\n  \"message\": \"Schools fetched successfully\",\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Green Valley High School\",\n      \"address\": \"21 Main Street, Bangalore\",\n      \"latitude\": 12.9716,\n      \"longitude\": 77.5946,\n      \"distanceKm\": 4.912\n    }\n  ]\n}"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
