@@ -1,6 +1,6 @@
 # School Management API (Node.js + Express + MySQL)
 
-This project implements two APIs:
+We are providing these endpoints:
 - `POST /addSchool` to add a school.
 - `GET /listSchools` to list schools sorted by proximity to a user location.
 
@@ -10,22 +10,6 @@ This project implements two APIs:
 - MySQL
 - Zod (request validation)
 
-## Project Structure
-
-```text
-src/
-  config/
-  controllers/
-  db/
-  middlewares/
-  routes/
-  services/
-  validators/
-  app.js
-  server.js
-sql/schema.sql
-postman/School-Management-API.postman_collection.json
-```
 
 ## Local Setup (TiDB Cloud)
 
